@@ -6,33 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-common" />
         <module name="spring-cloud-eurak-ecenter" />
         <module name="spring-cloud-eurake-center" />
-        <module name="spring-cloud-eureka-provider2" />
-        <module name="spring-cloud-zuul" />
-        <module name="spring-cloud-eureka-provider" />
         <module name="spring-cloud-eureka-center" />
         <module name="spring-cloud-eureka-client" />
+        <module name="spring-cloud-eureka-provider1" />
+        <module name="spring-cloud-eureka-provider2" />
+        <module name="spring-cloud-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-cloud-advanced" target="1.8" />
+      <module name="spring-cloud-common" target="1.8" />
       <module name="spring-cloud-eurak-ecenter" target="1.8" />
       <module name="spring-cloud-eurake-center" target="1.8" />
       <module name="spring-cloud-eureka-center" target="1.8" />
       <module name="spring-cloud-eureka-client" target="1.8" />
-      <module name="spring-cloud-eureka-provider" target="1.8" />
+      <module name="spring-cloud-eureka-provider1" target="1.8" />
       <module name="spring-cloud-eureka-provider2" target="1.8" />
       <module name="spring-cloud-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-cloud-common" options="-parameters" />
       <module name="spring-cloud-eurak-ecenter" options="-parameters" />
       <module name="spring-cloud-eurake-center" options="-parameters" />
       <module name="spring-cloud-eureka-center" options="-parameters" />
       <module name="spring-cloud-eureka-client" options="-parameters" />
-      <module name="spring-cloud-eureka-provider" options="-parameters" />
+      <module name="spring-cloud-eureka-provider1" options="-parameters" />
       <module name="spring-cloud-eureka-provider2" options="-parameters" />
       <module name="spring-cloud-zuul" options="-parameters" />
     </option>
