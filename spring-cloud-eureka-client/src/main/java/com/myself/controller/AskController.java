@@ -1,5 +1,6 @@
 package com.myself.controller;
 
+import com.myself.feign.ask.AskFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -19,11 +20,20 @@ public class AskController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private AskFeignClient askFeignClient;
+
     @RequestMapping(value = "/ask")
     public String ask(){
         String askHelloFromService = restTemplate.getForEntity("http://EUREKA-CLIENT-SERVICE/hello/{name}",String.class,name).getBody();
         return askHelloFromService;
     }
+
+    @RequestMapping(value = "/feignHello")
+    public String feignHello(){
+        return askFeignClient.hello("haha");
+    }
+
 
     @Bean
     @LoadBalanced

@@ -1,5 +1,5 @@
 server:
-  port: 8765
+  port: 8775
 eureka:
 #  instance:
 #    hostname: ${spring.application.name}
@@ -11,3 +11,22 @@ eureka:
 spring:
   application:
     name: eureka-client
+
+eureka-client-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.myself.config.LoadBalanced
+
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:
+  ReadTimeout: 500
+  ConnectTimeout: 500
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import java.util.List;
 
@@ -20,5 +21,7 @@ public class ServiceInstanceRestController {
     public List<ServiceInstance> serviceInstanceByApplicationName(@PathVariable String applicationName){
         return this.discoveryClient.getInstances(applicationName);
     }
+
+
 
 }

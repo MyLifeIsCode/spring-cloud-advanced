@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class SayHelloController {
     @RequestMapping(value = "/hello/{name}")
     public String sayHello(@PathVariable("name") String name){
-        return "Hello, " .concat(name).concat("---1").concat("!");
+        return "Hello, " .concat(name).concat("---2").concat("!");
     }
 }

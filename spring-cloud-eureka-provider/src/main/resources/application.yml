@@ -1,5 +1,5 @@
 server:
-  port: 8760
+  port: 8770
 eureka:
 #  instance:
 #    hostname: ${spring.application.name}
